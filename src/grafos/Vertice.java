@@ -12,9 +12,10 @@ import java.util.LinkedList;
  * @author rdcamero
  */
 public class Vertice {
+
     final int dato;
     LinkedList<Integer> adyacentes;
-    
+
     public Vertice(int dato) {
         this.dato = dato;
         adyacentes = new LinkedList<>();
@@ -27,9 +28,10 @@ public class Vertice {
     public LinkedList<Integer> getAdyacentes() {
         return adyacentes;
     }
-    public int totalAdyacente(){
+
+    public int totalAdyacente() {
         return adyacentes.size();
     }
-    
-    
+
+  
 }

@@ -6,6 +6,7 @@
 package grafos;
 
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
@@ -25,7 +26,7 @@ public class Grafos {
     //BFS: 01243
 
     static void llenarLista() {
-        int n = M.length;
+        int n = M.length;  
         for (int i = 0; i < n; i++) {
             Vertice temp = new Vertice(i);
             for (int j = 0; j < n; j++) {
@@ -98,6 +99,41 @@ public class Grafos {
                         cola.add(v);
                     }
                 }
+            }
+        }
+    }
+    
+    //Algoritmos de camino minimo 
+    static int[][] C ={{0,10,99999,99999,6},
+                       {10,0,7,11,5},
+                       {99999,7,0,12,6},
+                       {99999,11,12,0,99999},
+                       {6,5,6,99999,0}};
+    
+    static boolean[] visto = new boolean[C.length];
+    static int[] distancia = new int[C.length];
+    static int[] padre = new int[C.length]; 
+    
+    public static void dijktra(int grafo[][], int pInicial){
+        PriorityQueue cola = new PriorityQueue();    
+        for (int i = 0; i < C.length; i++) {
+            distancia[i]=99999;
+            visto[i]=false;
+            padre[i]=-1;
+        }
+        distancia[pInicial]=0;
+        visto[pInicial]=true;
+        cola.add(distancia[pInicial]);
+        while(!cola.isEmpty()){
+            int u = (int)cola.poll();
+            
+        }
+    }
+    
+    public static void floydMarshal(int distancia[][]){
+        for (int k = 0; k < distancia.length; k++) {
+            for (int i = 0; i < distancia.length; i++) {
+                
             }
         }
     }
